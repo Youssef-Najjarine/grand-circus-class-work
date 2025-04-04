@@ -26,12 +26,32 @@
                     }
                 } while (!validInteger);
                 // End valid integer entered loop
-                if (userNumber % 2 != 0 && userNumber < 60)
+                bool isOdd = userNumber % 2 != 0;
+                bool isEven = userNumber % 2 == 0;
+                if (isOdd)
                 {
-                    Console.WriteLine($"{userNumber} Odd and less than 60.");
-                } else if (userNumber % 2 == 0 && userNumber >= 2 && userNumber <= 24)
+                    if (userNumber < 60)
+                    {
+                        Console.WriteLine($"Number entered: {userNumber}");
+                        Console.WriteLine("Odd and less than 60.");
+                    } else if (userNumber > 60)
+                    {
+                        Console.WriteLine($"Number entered: {userNumber}");
+                        Console.WriteLine("“Odd and greater than 60.");
+                    }   
+                } else if (isEven)
                 {
-
+                    if (userNumber >= 2 && userNumber <= 24)
+                    {
+                        Console.WriteLine("Even and less than 25.");
+                    } else if (userNumber >= 26 && userNumber <= 60)
+                    {
+                        Console.WriteLine("“Even and between 26 and 60 inclusive.");
+                    } else if (userNumber > 60) 
+                    {
+                        Console.WriteLine($"Number entered: {userNumber}");
+                        Console.WriteLine("Even and greater than 60.");
+                    }
                 }
                 Console.Write($"\nDo you want to play again {userName}? (Yes/No): ");
                 userResponse = Console.ReadLine().ToLower().Trim();
