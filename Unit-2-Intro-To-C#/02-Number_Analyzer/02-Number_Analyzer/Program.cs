@@ -29,7 +29,7 @@
                 if (userNumber % 2 != 0 && userNumber < 60)
                 {
                     Console.WriteLine($"{userNumber} Odd and less than 60.");
-                } else if (userNumber % 2 == 0)
+                } else if (userNumber % 2 == 0 && userNumber >= 2 && userNumber <= 24)
                 {
 
                 }

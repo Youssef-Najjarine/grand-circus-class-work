@@ -14,10 +14,12 @@ class Program
          * string variables sometimes require special processing
          *        you can't use < > to compare strings
          *        Beware: Early versions of C# do not allow use of == with strings
-         *
+         *        
+         * a method is a program that processes data in an object/variable
+         * 
          * C# provides several methods to operate on strings:
          *
-         *    Hey) - compare the string to left of the . to string inside () for equals
+         *     .Equals(Hey) - compare the string to left of the . to string inside () for equals
          *     .CompareTo(string) - return a number indicating how the first string relates to the second
          *                          return a negative number if first string is less than the second
          *                          return a zero if first string is equal the second
@@ -59,5 +61,14 @@ class Program
         {
             Console.WriteLine("string1 is NOT equal string2");
         }
+        // Some methods that process strings
+        // To see a list of all methods available to an object - just type objectName.
+        // .Length - returns the number of characters in the string
+        // .Conntains(string) - returns true if the string given is inside a string
+        
+        string sentence = "My name is Frank and I attempt to teach C#";
+        Console.WriteLine("The length of the sentence is: " + sentence.Length);
+        bool containsFrank = sentence.Contains("Frank");
+        Console.WriteLine("Does sentence contain Frank: " + containsFrank);
     } // End of Main()
 }  // End of class Program
