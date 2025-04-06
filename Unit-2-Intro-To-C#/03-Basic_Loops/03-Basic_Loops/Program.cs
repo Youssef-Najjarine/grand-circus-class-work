@@ -76,13 +76,8 @@
             int correctCode = 13579;
             int maxAttempts = 5;
             int attempts = 0;
-            while (doorLocked || attempts < maxAttempts)
+            while (doorLocked && attempts < maxAttempts)
             {
-                if (attempts >= maxAttempts)
-                {
-                    Console.WriteLine("Warning, too many attempts. The door is now locked.");
-                    break;
-                }
                 do
                 {
                     Console.Write("Please enter a key code: ");
@@ -102,6 +97,10 @@
                 {
                     Console.WriteLine("Incorect code entered.");
                     attempts++;
+                }
+                if (attempts >= maxAttempts)
+                {
+                    Console.WriteLine("Warning, too many attempts. The door is now locked.");
                 }
             }
         }
