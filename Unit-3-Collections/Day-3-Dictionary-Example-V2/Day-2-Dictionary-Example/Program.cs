@@ -37,7 +37,7 @@ namespace Day_2_Dictionary_Example
             // Use a KeyValuePair type to get an entry from teh Dictionary
             foreach (KeyValuePair<string, double> anEntry in gradeBook)
             {
-                Console.WriteLine(gradeBook[anEntry.Key] + " has a grade of " + anEntry.Value);
+                Console.WriteLine(anEntry.Key + " has a grade of " + anEntry.Value);
             }
             
             Console.WriteLine("Please press enter to end program...");

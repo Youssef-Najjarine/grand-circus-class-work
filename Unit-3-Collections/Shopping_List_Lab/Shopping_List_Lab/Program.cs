@@ -23,21 +23,33 @@
                 PrintMenu(menu);
                 Console.Write("\nPlease enter a shopping list item: ");
                 string userInput = Console.ReadLine().ToLower().Trim();
-                string[] possibleAnswers = userInput.Split(".");
-                foreach (string a in possibleAnswers)
+                bool validEntry = false;
+                string itemName = "";
+                decimal price = 0;
+                foreach (KeyValuePair<string, decimal> entry in menu)
                 {
-                    Console.WriteLine($"a:{a}");
+                    string[] possibleAnswers = entry.Key.Split(".");
+                    if (new[] { 
+                        entry.Key.ToLower().Trim(), 
+                        possibleAnswers[0].Trim(), 
+                        possibleAnswers[1].ToLower().Trim() 
+                    }.Contains(userInput))
+                    {
+                        validEntry = true;
+                        itemName = possibleAnswers[1].ToLower().Trim();
+                        price = entry.Value;
+                    }
                 }
-                if (menu.ContainsKey(userInput))
+                if (validEntry)
                 {
-                    Console.WriteLine($"You added {userInput}: ${menu[userInput]} to your shopping list.");
+                    DisplayItemAdded(itemName, price);
                 } else
                 {
                     Console.WriteLine("Error, That menu item does not exist.");
                     continueOrdering = ContinueOrder("Would you like to try again and continue ordering? (y/n): ");
                     continue;
                 }
-                shoppingList.Add(new {name = userInput,price = menu[userInput]});
+                shoppingList.Add(new {name = itemName, price = price });
                 continueOrdering = ContinueOrder("Would you like to add another item? (y/n): ");
             } while (continueOrdering);
             if (shoppingList.Count > 0)
@@ -86,6 +98,15 @@
             }
                 return continueOrder;
         }
+        private static void DisplayItemAdded(string itemName, decimal price)
+        {
+            Console.WriteLine("\nItem added to Shopping List");
+            Console.WriteLine("_______________________________");
+            Console.WriteLine($"| {"Item",-15} | {"Price",8} |");
+            Console.WriteLine("|----------------------------|");
+            Console.WriteLine($"| {itemName,-15} | {price,8:C} |");
+            Console.WriteLine("------------------------------");
+        }
         private static void PrintShoppingListAndSum(List<dynamic> shoppingList)
         {
             decimal sum = 0;
@@ -101,6 +122,17 @@
             }
             Console.WriteLine("------------------------------");
             Console.WriteLine($"\nThe sum of your shopping list is: {sum:C}");
+            DisplayLeastAndExpensiveItems(shoppingList);
+        }
+        private static void DisplayLeastAndExpensiveItems(List<dynamic> shoppingList)
+        {
+            Console.WriteLine("\nMost and Least Items Ordered");
+            Console.WriteLine("_______________________________");
+            Console.WriteLine($"| {"Item",-15} | {"Price",8} |");
+            Console.WriteLine("|----------------------------|");
+            Console.WriteLine($"| {shoppingList[0].name,-15} | {shoppingList[0].price,8:C} |");
+            Console.WriteLine($"| {shoppingList[shoppingList.Count - 1].name,-15} | {shoppingList[shoppingList.Count - 1].price,8:C} |");
+            Console.WriteLine("------------------------------");
         }
     }
 }
