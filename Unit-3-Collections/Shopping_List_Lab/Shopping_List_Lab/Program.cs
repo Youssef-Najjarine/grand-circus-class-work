@@ -31,7 +31,10 @@
                     string[] possibleAnswers = entry.Key.Split(".");
                     if (new[] { 
                         entry.Key.ToLower().Trim(), 
-                        possibleAnswers[0].Trim(), 
+                        possibleAnswers[0].Trim(),
+                        possibleAnswers[0].Trim() + ".",
+                        possibleAnswers[0].ToLower().Trim() + possibleAnswers[1].ToLower().Trim(),
+                        possibleAnswers[0].ToLower().Trim() + "." + possibleAnswers[1].ToLower().Trim(),
                         possibleAnswers[1].ToLower().Trim() 
                     }.Contains(userInput))
                     {

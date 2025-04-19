@@ -7,23 +7,23 @@ namespace Exercise_Arrays_31_44
         static void Main(string[] args)
         {
             bool continueGame;
-            Console.WriteLine("EXERCISE 31!\n");
-            do
-            {
-                PlayExercise31();
-                continueGame = ContinueGame("Do you want to play Exercise 31 again? (y/n)? ");
-            } while (continueGame);
-            Console.WriteLine("Goodbye!\n");
+            //Console.WriteLine("EXERCISE 31!\n");
+            //do
+            //{
+            //    PlayExercise31();
+            //    continueGame = ContinueGame("Do you want to play Exercise 31 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
 
-            Console.WriteLine("EXERCISE 32!\n");
-            do
-            {
-                PlayExercise32();
-                continueGame = ContinueGame("Do you want to play Exercise 32 again? (y/n)? ");
-            } while (continueGame);
-            Console.WriteLine("Goodbye!\n");
+            //Console.WriteLine("EXERCISE 32!\n");
+            //do
+            //{
+            //    PlayExercise32();
+            //    continueGame = ContinueGame("Do you want to play Exercise 32 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
 
-            Console.WriteLine("EXERCISE 33!\n");
+            //Console.WriteLine("EXERCISE 33!\n");
             do
             {
                 PlayExercise33();
