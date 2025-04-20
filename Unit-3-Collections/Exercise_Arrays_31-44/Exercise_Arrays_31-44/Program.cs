@@ -7,6 +7,7 @@ namespace Exercise_Arrays_31_44
         static void Main(string[] args)
         {
             bool continueGame;
+
             //Console.WriteLine("EXERCISE 31!\n");
             //do
             //{
@@ -24,10 +25,85 @@ namespace Exercise_Arrays_31_44
             //Console.WriteLine("Goodbye!\n");
 
             //Console.WriteLine("EXERCISE 33!\n");
+            //do
+            //{
+            //    PlayExercise33();
+            //    continueGame = ContinueGame("Do you want to play Exercise 33 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 34!\n");
+            //do
+            //{
+            //    PlayExercise34();
+            //    continueGame = ContinueGame("Do you want to play Exercise 34 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 35!\n");
+            //do
+            //{
+            //    PlayExercise35();
+            //    continueGame = ContinueGame("Do you want to play Exercise 35 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 36!\n");
+            //do
+            //{
+            //    PlayExercise36();
+            //    continueGame = ContinueGame("Do you want to play Exercise 36 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 37!\n");
+            //do
+            //{
+            //    PlayExercise37();
+            //    continueGame = ContinueGame("Do you want to play Exercise 37 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 38!\n");
+            //do
+            //{
+            //    PlayExercise38();
+            //    continueGame = ContinueGame("Do you want to play Exercise 38 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 39!\n");
+            //do
+            //{
+            //    PlayExercise39();
+            //    continueGame = ContinueGame("Do you want to play Exercise 39 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 40!\n");
+
+            //do
+            //{
+            //    PlayExercise40();
+            //    continueGame = ContinueGame("Do you want to play Exercise 40 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            //Console.WriteLine("EXERCISE 41!\n");
+
+            //do
+            //{
+            //    PlayExercise41();
+            //    continueGame = ContinueGame("Do you want to play Exercise 41 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            Console.WriteLine("EXERCISE 42!\n");
+
             do
             {
-                PlayExercise33();
-                continueGame = ContinueGame("Do you want to play Exercise 33 again? (y/n)? ");
+                PlayExercise42();
+                continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
             } while (continueGame);
             Console.WriteLine("Goodbye!\n");
         }
@@ -135,6 +211,433 @@ namespace Exercise_Arrays_31_44
                 continueGame = ContinueGame("Would you like to continue (y/n)? ");
             } while (continueGame);
         }
+        private static void PlayExercise34()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            string outputMessage;
+            double[] possibleValues = new double[] { 16, 32, 64, 128, 256 };
+            do
+            {
+                Console.Write("Enter a command (half/double): ");
+                userInput = Console.ReadLine().ToLower().Trim();
+                isValidInput = IsValidResponse(userInput, 34);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                if (userInput == "half")
+                {
+                    for (int i = 0; i < possibleValues.Length; i++)
+                    {
+                        possibleValues[i] /= 2;
+                    }
+                }
+                else if (userInput == "double")
+                {
+                    for (int i = 0; i < possibleValues.Length; i++)
+                    {
+                        possibleValues[i] *= 2;
+                    }
+                }
+                outputMessage = "The array now contains: ";
+                for (int i = 0; i < possibleValues.Length;i++)
+                {
+                    if (i == possibleValues.Length - 1)
+                    {
+                        outputMessage += $"{possibleValues[i]}.";
+                    } else
+                    {
+                        outputMessage += possibleValues[i].ToString() + ", ";
+                    }
+                }
+                Console.WriteLine(outputMessage);
+                continueGame = ContinueGame("Would you like to continue (y/n)? ");
+            } while (continueGame);
+        }
+        private static void PlayExercise35()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            bool errorMessage = false;
+            int index1;
+            int index2;
+            string[] possibleValues = ["cow", "elephant", "jaguar", "horse", "crow"];
+            do
+            {
+                Console.Write("Enter two indices: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 35);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                string[] splitUserInput = userInput.Split(' ');
+                index1 = Int32.Parse(splitUserInput[0]);
+                index2 = Int32.Parse(splitUserInput[1]);
+                if (index1 < 0 || index2 < 0 || index1 > possibleValues.Length - 1)
+                {
+                    errorMessage = true;
+                } else if (index2 > possibleValues[index1].Length -1)
+                {
+                    errorMessage = true;
+                }
+                if (errorMessage)
+                {
+                    Console.WriteLine("Those are not valid indices.");
+                }
+                else
+                {
+                    Console.WriteLine($"The value at index {index1} is {possibleValues[index1]}.  The letter at index {index2} is {possibleValues[index1][index2]}.");
+                }
+                continueGame = ContinueGame("Would you like to continue (y/n)? ");
+            } while (continueGame);
+        }
+        private static void PlayExercise36()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            const int MAX_SIZE = 5;
+            int[] numbers = new int[MAX_SIZE] { 12, 11, 10, 9, 8 };
+            string[] words = new string[MAX_SIZE] { "Drummers Drumming", "Pipers Piping", "Lords a-Leaping", "Ladies Dancing", "Maids a-Milking" };
+
+            do
+            {
+                Console.Write("Enter a command (sing/quit): ");
+                userInput = Console.ReadLine().ToLower().Trim();
+                isValidInput = IsValidResponse(userInput, 36);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                if (userInput == "sing")
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        Console.WriteLine($"{numbers[i]} {words[i]}");
+                    }
+                }
+                if (userInput == "quit")
+                {
+                    continueGame = false;
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise37()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            int sum = 0;
+            string displayString = "";
+            int userAttempts = 0;
+            const int MAX_SIZE = 5;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                Console.Write("Enter a number: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 37);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} + ";
+                        }
+                        else 
+                        { 
+                            displayString += $"{numbers[i]} = "; 
+                        }
+                        sum += numbers[i];
+                    }
+                    Console.WriteLine(displayString + sum);
+                    sum = 0;
+                    userAttempts = 0;
+                    displayString = "";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise38()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            int sum = 0;
+            string displayString = "(";
+            int userAttempts = 0;
+            const int MAX_SIZE = 5;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                Console.Write("Enter a number: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 38);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} + ";
+                        }
+                        else
+                        {
+                            displayString += $"{numbers[i]})/{MAX_SIZE} = ";
+                        }
+                        sum += numbers[i];
+                    }
+                    displayString += $"{sum / MAX_SIZE}";
+                    Console.WriteLine(displayString);
+                    sum = 0;
+                    userAttempts = 0;
+                    displayString = "(";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise39()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            int sum = 0;
+            string displayString = "";
+            int userAttempts = 0;
+            const int MAX_SIZE = 5;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                Console.Write("Enter a number: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 39);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    Array.Sort(numbers);
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} ";
+                        }
+                        else
+                        {
+                            displayString += numbers[i].ToString();
+                        }
+                    }
+                    Console.WriteLine(displayString);
+                    sum = 0;
+                    userAttempts = 0;
+                    displayString = "";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise40()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            string displayString = "The median of (";
+            int userAttempts = 0;
+            const int MAX_SIZE = 5;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                Console.Write("Enter a number: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 40);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    Array.Sort(numbers);
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]}, ";
+                        }
+                        else
+                        {
+                            displayString += $"{numbers[i]}) is ";
+                        }
+                    }
+                    if (MAX_SIZE % 2 == 0)
+                    {
+                        int middleIndex1 = (MAX_SIZE / 2) - 1;
+                        int middleIndex2 = (MAX_SIZE / 2);
+                        Console.WriteLine($"middleIndex1: {middleIndex1}");
+                        Console.WriteLine($"middleIndex2: {middleIndex2}");
+                        decimal median = ((decimal)(numbers[middleIndex1] + numbers[middleIndex2]) / 2);
+                        displayString += median.ToString();
+                    } else
+                    {
+                        decimal middleIndex = Math.Round(((decimal)MAX_SIZE / 2), 0, MidpointRounding.AwayFromZero) - 1;
+                        displayString += numbers[Convert.ToInt32(middleIndex)];
+                    }
+                    Console.WriteLine(displayString);
+                    userAttempts = 0;
+                    displayString = "The median of (";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise41()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            decimal quotient = 0;
+            string displayString = "";
+            int userAttempts = 0;
+            const int MAX_SIZE = 2;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                if (userAttempts == 0)
+                {
+                    Console.Write("Enter a number: ");
+                } else
+                {
+                    Console.Write("Enter another number: ");
+                }
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 41);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i == 0)
+                        {
+                            quotient = numbers[i];
+                        } else
+                        {
+
+                            quotient /= numbers[i];
+                        }
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} / ";
+                        }
+                        else if (i == numbers.Length - 1)
+                        {   
+                            displayString += $"{numbers[i]} is approximately ";
+                        }
+                    }
+                    quotient = Math.Round(quotient,2,MidpointRounding.AwayFromZero);
+                    displayString += quotient.ToString() + ".";
+                    Console.WriteLine(displayString);
+                    userAttempts = 0;
+                    displayString = "";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
+        private static void PlayExercise42()
+        {
+            bool continueGame = true;
+            string userInput;
+            bool isValidInput;
+            int userNumber;
+            decimal quotient = 0;
+            string displayString = "";
+            int userAttempts = 0;
+            const int MAX_SIZE = 2;
+            int[] numbers = new int[MAX_SIZE];
+            do
+            {
+                if (userAttempts == 0)
+                {
+                    Console.Write("Enter a number: ");
+                }
+                else
+                {
+                    Console.Write("Enter another number: ");
+                }
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 41);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                userNumber = Int32.Parse(userInput);
+                numbers[userAttempts] = userNumber;
+                userAttempts++;
+                if (userAttempts == MAX_SIZE)
+                {
+                    for (int i = 0; i < numbers.Length; i++)
+                    {
+                        if (i == 0)
+                        {
+                            quotient = numbers[i];
+                        }
+                        else
+                        {
+
+                            quotient /= numbers[i];
+                        }
+                        if (i < numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} / ";
+                        }
+                        else if (i == numbers.Length - 1)
+                        {
+                            displayString += $"{numbers[i]} is approximately ";
+                        }
+                    }
+                    quotient = Math.Round(quotient, 2, MidpointRounding.AwayFromZero);
+                    displayString += quotient.ToString() + ".";
+                    Console.WriteLine(displayString);
+                    userAttempts = 0;
+                    displayString = "";
+                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
+                }
+            } while (continueGame);
+        }
         private static bool ContinueGame(string displayText)
         {
             bool continueGame = false;
@@ -168,23 +671,71 @@ namespace Exercise_Arrays_31_44
         }
         private static bool IsValidResponse(string userInput,int exerciseNumber)
         {
-            bool isValidStatus = true;
-            if (((int[])[31,32,33]).Contains(exerciseNumber))
+            bool isValidStatus = true; 
+            if (((int[])[31, 32, 33, 37, 38, 39,40]).Contains(exerciseNumber))
             {
-                if (string.IsNullOrEmpty(userInput))
-                {
-                    isValidStatus = false;
-                }
-                else
-                {
-                    isValidStatus = Int32.TryParse(userInput,out int number);
-                }
+                isValidStatus = Int32.TryParse(userInput, out int number);
                 if (!isValidStatus)
                 {
                     Console.WriteLine("Invalid Input. Please enter a valid number.");
                 }
+            } else if (exerciseNumber == 34)
+            {
+                isValidStatus = ((string[]) ["half", "double"]).Contains(userInput);
+                if (!isValidStatus)
+                {
+                    Console.WriteLine("Invalid Input. Please enter 'half' or 'double'.");
+                }
+            } else if (exerciseNumber == 35)
+            {
+                if (string.IsNullOrEmpty(userInput))
+                {
+                    isValidStatus = false;
+                } else
+                {
+                    string[] splitUserInput = userInput.Split(' ');
+                    if (splitUserInput.Length != 2)
+                    {
+                        isValidStatus = false;
+                    } else if (!(isValidStatus = Int32.TryParse(splitUserInput[0], out int number1)))
+                    {
+                        isValidStatus = false;
+                    }
+                    else if (!(isValidStatus = Int32.TryParse(splitUserInput[1], out int number2)))
+                    {
+                        isValidStatus = false;
+                    }
+                } 
+                if (!isValidStatus)
+                {
+                    Console.WriteLine("Invalid Input. Please enter two indices separated by a space.");
+                }
+            } else if (exerciseNumber == 36)
+            {
+                if (string.IsNullOrEmpty(userInput))
+                {
+                    isValidStatus = false;
+                } else if (!((string[]) ["sing", "quit"]).Contains(userInput))
+                {
+                    isValidStatus = false;
+                }
+                if (!isValidStatus)
+                {
+                    Console.WriteLine("Invalid Input. Please enter 'sing' or 'quit'.");
+                }
+            } else if (exerciseNumber == 41)
+            {
+                isValidStatus = Int32.TryParse(userInput, out int number);
+                if (!isValidStatus)
+                {
+                    Console.WriteLine("Invalid Input. Please enter a valid number.");
+                } else if (number == 0)
+                {
+                    isValidStatus = false;
+                    Console.WriteLine("Invalid Input. Please enter a valid number greater then 0.");
+                }
             }
-            return isValidStatus;
+                return isValidStatus;
         }
     }
 }
