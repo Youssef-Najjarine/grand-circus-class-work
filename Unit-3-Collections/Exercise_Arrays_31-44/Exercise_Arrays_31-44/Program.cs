@@ -98,12 +98,21 @@ namespace Exercise_Arrays_31_44
             //} while (continueGame);
             //Console.WriteLine("Goodbye!\n");
 
-            Console.WriteLine("EXERCISE 42!\n");
+            //Console.WriteLine("EXERCISE 42!\n");
+
+            //do
+            //{
+            //    PlayExercise42();
+            //    continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
+            //} while (continueGame);
+            //Console.WriteLine("Goodbye!\n");
+
+            Console.WriteLine("EXERCISE 43!\n");
 
             do
             {
-                PlayExercise42();
-                continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
+                PlayExercise43();
+                continueGame = ContinueGame("Do you want to play Exercise 43 again? (y/n)? ");
             } while (continueGame);
             Console.WriteLine("Goodbye!\n");
         }
@@ -580,63 +589,101 @@ namespace Exercise_Arrays_31_44
         private static void PlayExercise42()
         {
             bool continueGame = true;
+            bool validYCoordinate = false;
             string userInput;
             bool isValidInput;
-            int userNumber;
-            decimal quotient = 0;
+            int xCoordinate;
+            int yCoordinate;
             string displayString = "";
-            int userAttempts = 0;
-            const int MAX_SIZE = 2;
-            int[] numbers = new int[MAX_SIZE];
             do
             {
-                if (userAttempts == 0)
-                {
-                    Console.Write("Enter a number: ");
-                }
-                else
-                {
-                    Console.Write("Enter another number: ");
-                }
+                Console.Write("Enter an X coordinate: ");
                 userInput = Console.ReadLine().Trim();
-                isValidInput = IsValidResponse(userInput, 41);
+                isValidInput = IsValidResponse(userInput, 42);
                 if (!isValidInput)
                 {
                     continue;
                 }
-                userNumber = Int32.Parse(userInput);
-                numbers[userAttempts] = userNumber;
-                userAttempts++;
-                if (userAttempts == MAX_SIZE)
+                xCoordinate = Int32.Parse(userInput);
+                do
                 {
-                    for (int i = 0; i < numbers.Length; i++)
+                    Console.Write("Enter an Y coordinate: ");
+                    userInput = Console.ReadLine().Trim();
+                    isValidInput = IsValidResponse(userInput, 42);
+                    if (!isValidInput)
                     {
-                        if (i == 0)
-                        {
-                            quotient = numbers[i];
-                        }
-                        else
-                        {
-
-                            quotient /= numbers[i];
-                        }
-                        if (i < numbers.Length - 1)
-                        {
-                            displayString += $"{numbers[i]} / ";
-                        }
-                        else if (i == numbers.Length - 1)
-                        {
-                            displayString += $"{numbers[i]} is approximately ";
-                        }
+                        validYCoordinate = false;
+                        continue;
                     }
-                    quotient = Math.Round(quotient, 2, MidpointRounding.AwayFromZero);
-                    displayString += quotient.ToString() + ".";
-                    Console.WriteLine(displayString);
-                    userAttempts = 0;
-                    displayString = "";
-                    continueGame = ContinueGame("Would you like to continue (y/n)? ");
-                }
+                    validYCoordinate = true;
+                } while (!validYCoordinate);
+                yCoordinate = Int32.Parse(userInput);
+                Point point = new Point();
+                point.XCoordinate = xCoordinate;
+                point.YCoordinate = yCoordinate;
+                displayString = $"You have created a point object ({point.XCoordinate},{point.YCoordinate}).";
+                Console.WriteLine(displayString);
+                continueGame = ContinueGame("Would you like to continue (y/n)? ");
             } while (continueGame);
+        }
+        private static void PlayExercise43()
+        {
+            bool continueGame = true;
+            bool validYCoordinate = false;
+            string userInput;
+            bool isValidInput;
+            int xCoordinate;
+            int yCoordinate;
+            string displayString = "";
+            do
+            {
+                Console.Write("Enter an X coordinate: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 43);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                xCoordinate = Int32.Parse(userInput);
+                do
+                {
+                    Console.Write("Enter an Y coordinate: ");
+                    userInput = Console.ReadLine().Trim();
+                    isValidInput = IsValidResponse(userInput, 42);
+                    if (!isValidInput)
+                    {
+                        validYCoordinate = false;
+                        continue;
+                    }
+                    validYCoordinate = true;
+                } while (!validYCoordinate);
+                yCoordinate = Int32.Parse(userInput);
+                Point point = new Point();
+                point.XCoordinate = xCoordinate;
+                point.YCoordinate = yCoordinate;
+                displayString = $"You have created a point object ({point.XCoordinate},{point.YCoordinate}). ";
+                displayString += point.CalculateDistance().ToString();
+                Console.WriteLine(displayString);
+                continueGame = ContinueGame("Would you like to continue (y/n)? ");
+            } while (continueGame);
+        }
+        private class Point
+        {
+            int _XCoordinate;
+            int _YCoordinate;
+            public int XCoordinate { get; set; }
+            public int YCoordinate { get; set; }
+
+            public Point()
+            {
+                this.XCoordinate = _XCoordinate;
+                this.YCoordinate = _YCoordinate;
+            }
+
+            public double CalculateDistance()
+            {
+                
+            }
         }
         private static bool ContinueGame(string displayText)
         {
@@ -672,7 +719,7 @@ namespace Exercise_Arrays_31_44
         private static bool IsValidResponse(string userInput,int exerciseNumber)
         {
             bool isValidStatus = true; 
-            if (((int[])[31, 32, 33, 37, 38, 39,40]).Contains(exerciseNumber))
+            if (((int[])[31, 32, 33, 37, 38, 39,40, 42, 43]).Contains(exerciseNumber))
             {
                 isValidStatus = Int32.TryParse(userInput, out int number);
                 if (!isValidStatus)
