@@ -8,111 +8,115 @@ namespace Exercise_Arrays_31_44
         {
             bool continueGame;
 
-            //Console.WriteLine("EXERCISE 31!\n");
-            //do
-            //{
-            //    PlayExercise31();
-            //    continueGame = ContinueGame("Do you want to play Exercise 31 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 31!\n");
+            do
+            {
+                PlayExercise31();
+                continueGame = ContinueGame("Do you want to play Exercise 31 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 32!\n");
-            //do
-            //{
-            //    PlayExercise32();
-            //    continueGame = ContinueGame("Do you want to play Exercise 32 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 32!\n");
+            do
+            {
+                PlayExercise32();
+                continueGame = ContinueGame("Do you want to play Exercise 32 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 33!\n");
-            //do
-            //{
-            //    PlayExercise33();
-            //    continueGame = ContinueGame("Do you want to play Exercise 33 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 33!\n");
+            do
+            {
+                PlayExercise33();
+                continueGame = ContinueGame("Do you want to play Exercise 33 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 34!\n");
-            //do
-            //{
-            //    PlayExercise34();
-            //    continueGame = ContinueGame("Do you want to play Exercise 34 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 34!\n");
+            do
+            {
+                PlayExercise34();
+                continueGame = ContinueGame("Do you want to play Exercise 34 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 35!\n");
-            //do
-            //{
-            //    PlayExercise35();
-            //    continueGame = ContinueGame("Do you want to play Exercise 35 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 35!\n");
+            do
+            {
+                PlayExercise35();
+                continueGame = ContinueGame("Do you want to play Exercise 35 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 36!\n");
-            //do
-            //{
-            //    PlayExercise36();
-            //    continueGame = ContinueGame("Do you want to play Exercise 36 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 36!\n");
+            do
+            {
+                PlayExercise36();
+                continueGame = ContinueGame("Do you want to play Exercise 36 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 37!\n");
-            //do
-            //{
-            //    PlayExercise37();
-            //    continueGame = ContinueGame("Do you want to play Exercise 37 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 37!\n");
+            do
+            {
+                PlayExercise37();
+                continueGame = ContinueGame("Do you want to play Exercise 37 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 38!\n");
-            //do
-            //{
-            //    PlayExercise38();
-            //    continueGame = ContinueGame("Do you want to play Exercise 38 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 38!\n");
+            do
+            {
+                PlayExercise38();
+                continueGame = ContinueGame("Do you want to play Exercise 38 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 39!\n");
-            //do
-            //{
-            //    PlayExercise39();
-            //    continueGame = ContinueGame("Do you want to play Exercise 39 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 39!\n");
+            do
+            {
+                PlayExercise39();
+                continueGame = ContinueGame("Do you want to play Exercise 39 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 40!\n");
+            Console.WriteLine("EXERCISE 40!\n");
+            do
+            {
+                PlayExercise40();
+                continueGame = ContinueGame("Do you want to play Exercise 40 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //do
-            //{
-            //    PlayExercise40();
-            //    continueGame = ContinueGame("Do you want to play Exercise 40 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 41!\n");
+            do
+            {
+                PlayExercise41();
+                continueGame = ContinueGame("Do you want to play Exercise 41 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 41!\n");
-
-            //do
-            //{
-            //    PlayExercise41();
-            //    continueGame = ContinueGame("Do you want to play Exercise 41 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
-
-            //Console.WriteLine("EXERCISE 42!\n");
-
-            //do
-            //{
-            //    PlayExercise42();
-            //    continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 42!\n");
+            do
+            {
+                PlayExercise42();
+                continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
             Console.WriteLine("EXERCISE 43!\n");
-
             do
             {
                 PlayExercise43();
                 continueGame = ContinueGame("Do you want to play Exercise 43 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
+
+            Console.WriteLine("EXERCISE 44!\n");
+            do
+            {
+                PlayExercise44();
+                continueGame = ContinueGame("Do you want to play Exercise 44 again? (y/n)? ");
             } while (continueGame);
             Console.WriteLine("Goodbye!\n");
         }
@@ -618,10 +622,8 @@ namespace Exercise_Arrays_31_44
                     validYCoordinate = true;
                 } while (!validYCoordinate);
                 yCoordinate = Int32.Parse(userInput);
-                Point point = new Point();
-                point.XCoordinate = xCoordinate;
-                point.YCoordinate = yCoordinate;
-                displayString = $"You have created a point object ({point.XCoordinate},{point.YCoordinate}).";
+                Point point = new Point(xCoordinate, yCoordinate);
+                displayString = $"You have created a point object ({point.DisplayCordinates()}).";
                 Console.WriteLine(displayString);
                 continueGame = ContinueGame("Would you like to continue (y/n)? ");
             } while (continueGame);
@@ -649,7 +651,7 @@ namespace Exercise_Arrays_31_44
                 {
                     Console.Write("Enter an Y coordinate: ");
                     userInput = Console.ReadLine().Trim();
-                    isValidInput = IsValidResponse(userInput, 42);
+                    isValidInput = IsValidResponse(userInput, 43);
                     if (!isValidInput)
                     {
                         validYCoordinate = false;
@@ -658,32 +660,54 @@ namespace Exercise_Arrays_31_44
                     validYCoordinate = true;
                 } while (!validYCoordinate);
                 yCoordinate = Int32.Parse(userInput);
-                Point point = new Point();
-                point.XCoordinate = xCoordinate;
-                point.YCoordinate = yCoordinate;
-                displayString = $"You have created a point object ({point.XCoordinate},{point.YCoordinate}). ";
-                displayString += point.CalculateDistance().ToString();
+                Point point = new Point(xCoordinate, yCoordinate);
+                displayString = $"You have created a point object ({point.DisplayCordinates()}). It has a distance of {point.CalculateDistance().ToString()}.";
                 Console.WriteLine(displayString);
                 continueGame = ContinueGame("Would you like to continue (y/n)? ");
             } while (continueGame);
         }
-        private class Point
+        private static void PlayExercise44()
         {
-            int _XCoordinate;
-            int _YCoordinate;
-            public int XCoordinate { get; set; }
-            public int YCoordinate { get; set; }
-
-            public Point()
+            bool continueGame = true;
+            bool validYCoordinate = false;
+            string userInput;
+            bool isValidInput;
+            int[] xCoordinates = new int[2];
+            int[] yCoordinates = new int[2];
+            string[] splitUserInput;
+            string displayString = "";
+            do
             {
-                this.XCoordinate = _XCoordinate;
-                this.YCoordinate = _YCoordinate;
-            }
-
-            public double CalculateDistance()
-            {
-                
-            }
+                Console.Write("Enter coordinates for a point: ");
+                userInput = Console.ReadLine().Trim();
+                isValidInput = IsValidResponse(userInput, 44);
+                if (!isValidInput)
+                {
+                    continue;
+                }
+                splitUserInput = userInput.Split(' ');
+                xCoordinates[0] = Int32.Parse(splitUserInput[0]);
+                xCoordinates[1] = Int32.Parse(splitUserInput[1]);
+                do
+                {
+                    Console.Write("Enter coordinates for another point: ");
+                    userInput = Console.ReadLine().Trim();
+                    isValidInput = IsValidResponse(userInput, 44);
+                    if (!isValidInput)
+                    {
+                        validYCoordinate = false;
+                        continue;
+                    }
+                    validYCoordinate = true;
+                } while (!validYCoordinate);
+                splitUserInput = userInput.Split(' ');
+                yCoordinates[0] = Int32.Parse(splitUserInput[0]);
+                yCoordinates[1] = Int32.Parse(splitUserInput[1]);
+                Point point = new Point(xCoordinates, yCoordinates);
+                displayString = $"The midpoint between ({point.DisplayGroupedXCordinates()}) and ({point.DisplayGroupedYCordinates()}) is ({point.CalculateMidpoint()}).";
+                Console.WriteLine(displayString);
+                continueGame = ContinueGame("Would you like to continue (y/n)? ");
+            } while (continueGame);
         }
         private static bool ContinueGame(string displayText)
         {
@@ -733,7 +757,7 @@ namespace Exercise_Arrays_31_44
                 {
                     Console.WriteLine("Invalid Input. Please enter 'half' or 'double'.");
                 }
-            } else if (exerciseNumber == 35)
+            } else if (((int[])[35, 44]).Contains(exerciseNumber))
             {
                 if (string.IsNullOrEmpty(userInput))
                 {
@@ -755,7 +779,7 @@ namespace Exercise_Arrays_31_44
                 } 
                 if (!isValidStatus)
                 {
-                    Console.WriteLine("Invalid Input. Please enter two indices separated by a space.");
+                    Console.WriteLine($"Invalid Input. Please enter two { (exerciseNumber == 35 ? "indices" : exerciseNumber == 44 ? "numbers" : "")} separated by one space.");
                 }
             } else if (exerciseNumber == 36)
             {
