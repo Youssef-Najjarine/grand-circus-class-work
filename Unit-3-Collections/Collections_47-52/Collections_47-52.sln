@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections_47-52", "Collections_47-52\Collections_47-52.csproj", "{9C7E473C-3E6B-4334-8426-44F05ECB4516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercises Library", "Exercises Library\Exercises Library.csproj", "{09F3B225-AB0C-4A70-B5F9-283388BDEAB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9C7E473C-3E6B-4334-8426-44F05ECB4516}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C7E473C-3E6B-4334-8426-44F05ECB4516}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C7E473C-3E6B-4334-8426-44F05ECB4516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F3B225-AB0C-4A70-B5F9-283388BDEAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F3B225-AB0C-4A70-B5F9-283388BDEAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F3B225-AB0C-4A70-B5F9-283388BDEAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F3B225-AB0C-4A70-B5F9-283388BDEAB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
