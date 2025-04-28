@@ -74,7 +74,6 @@ class Program
     
     Console.WriteLine($"\nThe sum of scores: {johnTheStudent.SumOfScores()}");
     Console.WriteLine($"\nThe avg of scores: {johnTheStudent.AvgOfScores()}");
-
-    //Console.WriteLine(aStudent.studentName);
+    Console.WriteLine(johnTheStudent);
     }
 }

@@ -5,8 +5,13 @@ namespace Exercises_Library
     {
         public void Run()
         {
+            Console.WriteLine("\nEXERCISE 47!\n");
+            string userInput;
             while (true)
             {
+                Console.Write("Enter some text:");
+                userInput = Console.ReadLine().ToLower().Trim();
+                Console.WriteLine("You have entered: " + userInput);
                 bool continueGame = helperFuncs.ContinueGame("Would you like to continue (y/n)?");
                 if (!continueGame)
                 {

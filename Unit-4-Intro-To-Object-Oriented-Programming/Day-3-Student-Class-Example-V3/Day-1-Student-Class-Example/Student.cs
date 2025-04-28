@@ -124,7 +124,7 @@ public class Student
     // Method compute average score for user
     public double AvgOfScores()
     {
-        return SumOfScores() / testScores.Count; // Using a class method inside another class method
+        return Math.Round(SumOfScores() / testScores.Count,2); // Using a class method inside another class method
     }
     
     
@@ -143,5 +143,8 @@ public class Student
             Console.Write(score + " ");  // Display on same line
         }
     }
-    
+    public override string? ToString()
+    {
+        return studentName;
+    }
 }
