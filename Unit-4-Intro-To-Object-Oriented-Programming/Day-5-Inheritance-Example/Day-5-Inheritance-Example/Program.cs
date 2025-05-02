@@ -1,10 +1,9 @@
 ﻿using GeneralPurposeFunctions;
 using System;
 
-
-namespace Day_3_Inheritance
+namespace Day_5_Inheritance_Example
 {
-    internal class Program
+   class Program
     {
         // Instantiate a copy of the code in CommonlyUsedFunctions called myFuncs
         // It's static because its used in Main() which is static
@@ -116,8 +115,9 @@ namespace Day_3_Inheritance
             Console.Write($" 2nd card: {usaCard2.CardValue} ({usaCard2.GetCardValueName()}) of {usaCard2.CardSuit}\n");
 
             myFuncs.PauseProgram();
-
-           
+            
+            myFuncs.WriteSeparatorLine("Thanks for trying out our first OOP application!");
+            myFuncs.PauseProgram();
         }
     }
 }
