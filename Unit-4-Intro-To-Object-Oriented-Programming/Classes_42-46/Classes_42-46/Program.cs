@@ -7,37 +7,38 @@ namespace Classes_42_46
         static void Main(string[] args)
         {
             bool continueGame;
-            //Console.WriteLine("EXERCISE 42!\n");
-            //do
-            //{
-            //    PlayExercise42();
-            //    continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 43!\n");
-            //do
-            //{
-            //    PlayExercise43();
-            //    continueGame = ContinueGame("Do you want to play Exercise 43 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 42!\n");
+            do
+            {
+                PlayExercise42();
+                continueGame = ContinueGame("Do you want to play Exercise 42 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 44!\n");
-            //do
-            //{
-            //    PlayExercise44();
-            //    continueGame = ContinueGame("Do you want to play Exercise 44 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 43!\n");
+            do
+            {
+                PlayExercise43();
+                continueGame = ContinueGame("Do you want to play Exercise 43 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
-            //Console.WriteLine("EXERCISE 45!\n");
-            //do
-            //{
-            //    PlayExercise45();
-            //    continueGame = ContinueGame("Do you want to play Exercise 45 again? (y/n)? ");
-            //} while (continueGame);
-            //Console.WriteLine("Goodbye!\n");
+            Console.WriteLine("EXERCISE 44!\n");
+            do
+            {
+                PlayExercise44();
+                continueGame = ContinueGame("Do you want to play Exercise 44 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
+
+            Console.WriteLine("EXERCISE 45!\n");
+            do
+            {
+                PlayExercise45();
+                continueGame = ContinueGame("Do you want to play Exercise 45 again? (y/n)? ");
+            } while (continueGame);
+            Console.WriteLine("Goodbye!\n");
 
             Console.WriteLine("EXERCISE 46!\n");
             do
