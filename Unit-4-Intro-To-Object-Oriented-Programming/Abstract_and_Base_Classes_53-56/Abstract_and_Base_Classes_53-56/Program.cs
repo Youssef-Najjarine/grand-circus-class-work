@@ -29,27 +29,47 @@
 
             // Triangle Section
             string[] triangleInputs;
+            Triangle newTriangle;
+            bool isValidTriangleInputs = false;
             do
             {
                 Console.WriteLine("\nTriangle Section!\n");
                 Console.Write("Enter the side lengths of a triangle: ");
                 userInput = Console.ReadLine().Trim();
-                if (IsValidResponse(userInput, "Triangle"))
+                isValidTriangleInputs = IsValidResponse(userInput, "Triangle");
+                if (isValidTriangleInputs)
                 {
                     triangleInputs = userInput.Split(' ');
                     num1 = double.Parse(triangleInputs[0]);
                     num2 = double.Parse(triangleInputs[1]);
                     num3 = double.Parse(triangleInputs[2]);
+                    newTriangle = new Triangle(num1, num2, num3, "Triangle", 3);
+                    if (
+                      double.IsNaN(newTriangle.Area) 
+                      || double.IsInfinity(newTriangle.Area)
+                      || !(num1 + num2 > num3)
+                      || !(num1 + num3 > num2)
+                      || !(num2 + num3 > num1)
+                    )
+                    {
+                        Console.WriteLine("Error, the sides you entered are not valid. Please ensure the sum of 2 sides are greater then or the same as the third.");
+                        isValidTriangleInputs = false;
+                    } 
+
                 }
-            } while (!IsValidResponse(userInput, "Triangle"));
-            Triangle newTriangle = new Triangle(num1,num2,num3, "Triangle", 3);
-            if (double.IsNaN(newTriangle.Area) || double.IsInfinity(newTriangle.Area))
+            } while (!isValidTriangleInputs);
+            newTriangle = new Triangle(num1,num2,num3, "Triangle", 3);
+            Console.WriteLine($"The triangle has side lengths {newTriangle.Side1Length}, {newTriangle.Side2Length}, and {newTriangle.Side1Length}.  Its area is {newTriangle.Area} and its perimeter is {newTriangle.Perimeter}.");
+
+            // Circle Section
+            do
             {
-                Console.WriteLine("Error, the sides you entered are not valid. Please ensure the sum of 2 sides are greater then the third.");
-            } else
-            {
-                Console.WriteLine($"The triangle has side lengths {newTriangle.Side1Length}, {newTriangle.Side2Length}, and {newTriangle.Side1Length}.  Its area is {newTriangle.Area} and its perimeter is {newTriangle.Perimeter}.");
-            }
+                Console.WriteLine("\nCircle Section!\n");
+                Console.Write("Enter the radius: ");
+                userInput = Console.ReadLine().Trim();
+            } while (!IsValidResponse(userInput, "Circle"));
+            Circle newCircle = new Circle(double.Parse(userInput), "Circle", 0);
+            Console.WriteLine($"The circle has a radius of {newCircle.Radius}. The area is {newCircle.Area} and the perimeter is {newCircle.Perimeter}.");
 
             // Rectangle Section
             do
@@ -68,7 +88,7 @@
             double num2 = -1;
             double num3 = -1;
             bool isValid = false;
-            if (validationContext == "Square")
+            if (validationContext == "Square" || validationContext == "Circle")
             {
                 if (!string.IsNullOrEmpty(input))
                 {

@@ -42,6 +42,9 @@ namespace Abstract_and_Base_Classes_53_56
             get { return _Perimeter; }
             set { _Perimeter = value; }
         }
+        public double Radius {
+            get { return _Radius; }
+        }
         protected override double CalculateArea()
         {
             return Math.Round(Math.PI * (this._Radius * this._Radius), 2);
