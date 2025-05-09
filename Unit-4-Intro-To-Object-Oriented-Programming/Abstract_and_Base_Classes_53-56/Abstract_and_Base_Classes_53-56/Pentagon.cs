@@ -45,7 +45,7 @@ namespace Abstract_and_Base_Classes_53_56
             get { return this._Area; }
             set { this._Area = value; }
         }
-        public overide double Perimeter
+        public override double Perimeter
         {
             get { return this._Perimeter; }
             set { this._Perimeter = value; }

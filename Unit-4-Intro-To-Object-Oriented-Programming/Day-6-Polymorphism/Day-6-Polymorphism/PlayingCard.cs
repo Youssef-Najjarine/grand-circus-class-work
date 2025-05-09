@@ -46,6 +46,9 @@ namespace Day_6_Polymorphism
             CardValue = theValue; // initialize value to value passed 
             CardSuit  = theSuit;  // initialize suit to suit passed  
             CardColor = theColor; // initialize the color to the color passed
+            Console.WriteLine($"CARD VALUE: {_cardValue}");
+            Console.WriteLine($"CARD VALUE 2: {CardValue}");
+
         }
 
         //---------------------------------------------------------------
