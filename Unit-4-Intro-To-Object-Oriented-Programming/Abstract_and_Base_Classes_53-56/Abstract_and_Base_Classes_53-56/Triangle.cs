@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Abstract_and_Base_Classes_53_56
 {
-    internal class Triangle : Shape
+    internal class Triangle : MultiSidedShape
     {
         // Fields
         private double _Side1Length;
@@ -41,23 +41,22 @@ namespace Abstract_and_Base_Classes_53_56
         }
         protected override string ShapeName
         {
-            get { return base._ShapeName; }
-            set { _ShapeName = value; }
+            get { return _shapeName; }
+            set { _shapeName = value; }
         }
         protected override int SidesCount
         {
-            get { return _SideCount; }
-            set { _SideCount = value; }
+            set { _sideCount = value; }
         }
         public override double Area
         {
-            get { return _Area; }
-            set { _Area = value; }
+            get { return _area; }
+            set { _area = value; }
         }
         public override double Perimeter
         {
-            get { return _Perimeter; }
-            set { _Perimeter = value; }
+            get { return _perimeter; }
+            set { _perimeter = value; }
         }
 
         // Methods
@@ -69,6 +68,13 @@ namespace Abstract_and_Base_Classes_53_56
         {
             double semiPerimeter = CalculatePerimeter() / 2;
             return Math.Round(Math.Sqrt(semiPerimeter * ((semiPerimeter - this._Side1Length) * (semiPerimeter - this._Side2Length) * (semiPerimeter - this._Side3Length))), 2);
+        }
+        protected override List<double> SideLengths
+        {
+            get
+            {
+                return new List<double> { this._Side1Length, this._Side2Length, this._Side3Length };
+            }
         }
     }
 }

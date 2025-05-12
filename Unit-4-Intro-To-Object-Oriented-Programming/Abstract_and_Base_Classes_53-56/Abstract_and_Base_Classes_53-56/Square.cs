@@ -8,50 +8,47 @@ namespace Abstract_and_Base_Classes_53_56
 {
     internal class Square : Shape
     {
-        // Fields
-
-        private double _SideLength;
+        //Fields 
+        private double _sideLength;
         // Constructors
-
         public Square(double sideLength, string shapeName, int sides) : base(shapeName, sides)
         {
-            this._SideLength = sideLength;
+            this._sideLength = sideLength;
             ShapeName = shapeName;
             SidesCount = sides;
             Area = CalculateArea();
             Perimeter = CalculatePerimeter();
         }
         // Properties
-        public double SideLength
-        {
-            get { return this._SideLength; }
-        }
         protected override string ShapeName
         {
-            get { return base._ShapeName; }
-            set { _ShapeName = value; }
+            get { return _shapeName; }
+            set { _shapeName = value; }
         }
         protected override int SidesCount
         {
-            get { return _SideCount; }
-            set { _SideCount = value; }
+            set { _sideCount = value; }
         }
         public override double Area {
-            get { return _Area; }
-            set { _Area = value;  }
+            get { return _area; }
+            set { _area = value;  }
         }
         public override double Perimeter {
-            get { return _Perimeter; }
-            set { _Perimeter = value; }
+            get { return _perimeter; }
+            set { _perimeter = value; }
         }
         //Methods
         protected override double CalculatePerimeter()
         {
-            return Math.Round(this._SideLength * 4, 2);
+            return Math.Round(this._sideLength * 4, 2);
         }
          protected override double CalculateArea()
         {
-            return Math.Round(_SideLength * _SideLength, 2);
+            return Math.Round(_sideLength * _sideLength, 2);
+        }
+        public override string ToString()
+        {
+            return $"The {this.ShapeName} has side length of {this._sideLength}. The area is {this.Area} and the its perimeter is {this.Perimeter}.";
         }
     }
 }

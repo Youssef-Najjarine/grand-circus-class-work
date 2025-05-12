@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Abstract_and_Base_Classes_53_56
 {
-    internal class Circle : Shape
+    internal class Circle : EllipsesShape
     {
         // Fields
-        private double _Radius;
+        private double _radius;
 
         // Constructors
         public Circle(double radius, string shapeName, int sides) : base(shapeName, sides)
         {
-            this._Radius = radius;
+            this._radius = radius;
             ShapeName = shapeName;
             SidesCount = sides;
             Area = CalculateArea();
@@ -24,34 +24,33 @@ namespace Abstract_and_Base_Classes_53_56
         // Properties
         protected override string ShapeName
         {
-            get { return base._ShapeName; }
-            set { _ShapeName = value; }
+            get { return _shapeName; }
+            set { _shapeName = value; }
         }
         protected override int SidesCount
         {
-            get { return _SideCount; }
-            set { _SideCount = value; }
+            set { _sideCount = value; }
         }
         public override double Area
         {
-            get { return _Area; }
-            set { _Area = value; }
+            get { return _area; }
+            set { _area = value; }
         }
         public override double Perimeter
         {
-            get { return _Perimeter; }
-            set { _Perimeter = value; }
+            get { return _perimeter; }
+            set { _perimeter = value; }
         }
-        public double Radius {
-            get { return _Radius; }
+        protected override double Radius {
+            get { return _radius; }
         }
         protected override double CalculateArea()
         {
-            return Math.Round(Math.PI * (this._Radius * this._Radius), 2);
+            return Math.Round(Math.PI * (this._radius * this._radius), 2);
         }
         protected override double CalculatePerimeter()
         {
-            return Math.Round(Math.PI * (2 * this._Radius), 2);
+            return Math.Round(Math.PI * (2 * this._radius), 2);
         }
     }
 }
