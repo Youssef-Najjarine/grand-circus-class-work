@@ -8,7 +8,7 @@ namespace Day_6_Abstract_Classes
     // It's in the same namespace as the application (for now and for simplicity)
     //
 
-    public class PlayingCard
+    public abstract class PlayingCard
     {
     /*********************************************************************
      * Data members (attributes, properties, variables)
