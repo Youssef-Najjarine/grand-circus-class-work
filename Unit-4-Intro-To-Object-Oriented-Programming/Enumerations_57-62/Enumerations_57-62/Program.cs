@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace Enumerations_57_62
 {
@@ -9,14 +10,138 @@ namespace Enumerations_57_62
             string continueString;
             do
             {
-                Console.WriteLine("\nEXERCISE 57!\n");
-                Exercise57();
+                //Console.WriteLine("\nEXERCISE 57!\n");
+                //Exercise57();
                 continueString = "Would you like to continue (y/n)? ";
+
+                Console.WriteLine("\nEXERCISE 58!\n");
+                Exercise58();
             } while (ContinueGame(continueString));
         }
         private static void Exercise57()
         {
+            string userInput;
+            bool validInput = false;
+            string player1Answer = "";
+            string player2Answer = "";
+            do
+            {
+                Console.Write("Player 1, enter rock (r), paper (p), or scissors(s): ");
+                userInput = Console.ReadLine().ToLower().Trim();
+                validInput = CheckUserResponse(userInput, 57);
+            } while (!validInput);
+            player1Answer = userInput;
+            do
+            {
+                Regex regex = new Regex(player1Answer);
+                string player1Asterisk = regex.Replace(player1Answer, new string('*', player1Answer.Length));
+                Console.WriteLine($"Player 1 entered {player1Asterisk}");
+                Console.Write("Player 2, enter rock (r), paper (p), or scissors(s): ");
+                userInput = Console.ReadLine().ToLower().Trim();
+                validInput = CheckUserResponse(userInput, 57);
+            } while (!validInput);
+            player2Answer = userInput;
+            string winner = CalculateRockPaperScissorsWinner(player1Answer, player2Answer);
+            Console.WriteLine(winner);
+        }
+        private static string CalculateRockPaperScissorsWinner(string player1, string player2)
+        {
+            string winner = "";
+            string player1Answer = "";
+            string player2Answer = "";
+            if (player1 == "r" || player1 == "rock")
+            {
 
+                player1Answer = "rock";
+            }
+            else if (player1 == "p" || player1 == "paper")
+            {
+                player1Answer = "paper";
+            }
+            else if (player1 == "s" || player1 == "scissors")
+            {
+                player1Answer = "scissors";
+            }
+            if (player2 == "r" || player2 == "rock")
+            {
+
+                player2Answer = "rock";
+            }
+            else if (player2 == "p" || player2 == "paper")
+            {
+                player2Answer = "paper";
+            }
+            else if (player2 == "s" || player2 == "scissors")
+            {
+                player2Answer = "scissors";
+            }
+            if (player1Answer == player2Answer)
+            {
+                winner = "It's a tie!";
+            }
+            else if ((player1Answer == "rock" && player2Answer == "scissors")
+                || (player1Answer == "scissors" && player2Answer == "paper")
+                || (player1Answer == "paper" && player2Answer == "rock"))
+            {
+                winner = "Player 1 wins!";
+            }
+            else if ((player2Answer == "rock" && player1Answer == "scissors")
+                || (player2Answer == "scissors" && player1Answer == "paper")
+                || (player2Answer == "paper" && player1Answer == "rock"))
+            {
+                winner = "Player 2 wins!";
+            }
+            return winner;
+        }
+        private static void Exercise58()
+        {
+            string displayString = "";
+            displayString += "Suits => ";
+            foreach (Enum suit in Enum.GetValues(typeof(Suits)))
+            {
+                displayString += suit + ", ";
+            }
+            displayString = displayString.TrimEnd(' ',',');
+            Console.WriteLine(displayString);
+            displayString = "";
+            displayString += "Browsers => ";
+            foreach (Enum browser in Enum.GetValues(typeof(Browsers)))
+            {
+                displayString += browser + ", ";
+            }
+            displayString = displayString.TrimEnd(' ', ',');
+            Console.WriteLine(displayString);
+        }
+        enum Suits
+        {
+            Diamonds,
+            Hearts,
+            Clubs,
+            Spades
+        }
+        enum Browsers
+        {
+            Chrome,
+            Firefox,
+            IE,
+            Opera
+        }
+        private static bool CheckUserResponse(string userInput, int exerciseNumber)
+        {
+           bool result = false;
+
+           if (exerciseNumber == 57)
+            {
+                string[] possibleAnswers = ["rock", "r", "paper", "p", "scissors", "s"];
+                if (possibleAnswers.Contains(userInput))
+                {
+                    result = true;
+                } else
+                {
+                    Console.WriteLine("Invalid input. Please enter 'rock', 'r', 'paper', 'p', 'scissors', or 's'.");
+                }
+            }
+            return result;
         }
         private static bool ContinueGame(string userInput)
         {
