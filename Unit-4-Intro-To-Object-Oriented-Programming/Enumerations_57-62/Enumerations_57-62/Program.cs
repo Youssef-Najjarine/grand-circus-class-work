@@ -12,10 +12,13 @@ namespace Enumerations_57_62
             {
                 //Console.WriteLine("\nEXERCISE 57!\n");
                 //Exercise57();
-                continueString = "Would you like to continue (y/n)? ";
+                continueString = "\nWould you like to continue (y/n)? ";
 
-                Console.WriteLine("\nEXERCISE 58!\n");
-                Exercise58();
+                //Console.WriteLine("\nEXERCISE 58!\n");
+                //Exercise58();
+
+                Console.WriteLine("\nEXERCISE 59!\n");
+                Exercise59();
             } while (ContinueGame(continueString));
         }
         private static void Exercise57()
@@ -96,20 +99,41 @@ namespace Enumerations_57_62
         private static void Exercise58()
         {
             string displayString = "";
-            displayString += "Suits => ";
+            displayString += "Suit => ";
             foreach (Enum suit in Enum.GetValues(typeof(Suits)))
             {
                 displayString += suit + ", ";
             }
-            displayString = displayString.TrimEnd(' ',',');
+            displayString = displayString.TrimEnd(' ', ',');
+            displayString = String.Format("\n{0}", displayString);
             Console.WriteLine(displayString);
             displayString = "";
-            displayString += "Browsers => ";
+            displayString += "Browser => ";
+
             foreach (Enum browser in Enum.GetValues(typeof(Browsers)))
             {
                 displayString += browser + ", ";
             }
             displayString = displayString.TrimEnd(' ', ',');
+            displayString = String.Format("\n{0}", displayString);
+            Console.WriteLine(displayString);
+            displayString = "";
+            displayString += "Brand => ";
+            foreach (Enum brand in Enum.GetValues(typeof(Brands)))
+            {
+                displayString += brand + ", ";
+            }
+            displayString = displayString.TrimEnd(' ', ',');
+            displayString = String.Format("\n{0}", displayString);
+            Console.WriteLine(displayString);
+            displayString = "";
+            displayString += "Day => ";
+            foreach(Enum day in Enum.GetValues(typeof(Days)))
+            {
+                displayString += day + ", ";
+            }
+            displayString = displayString.TrimEnd(' ', ',');
+            displayString = String.Format("\n{0}", displayString);
             Console.WriteLine(displayString);
         }
         enum Suits
@@ -125,6 +149,27 @@ namespace Enumerations_57_62
             Firefox,
             IE,
             Opera
+        }
+        enum  Brands 
+        {
+            Polo,
+            Gucci,
+            Armani,
+            Athleta
+        }
+        enum Days
+        {
+            Sunday,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday
+        }
+        private static void Exercise59()
+        {
+            Deck deck = new Deck();
         }
         private static bool CheckUserResponse(string userInput, int exerciseNumber)
         {
