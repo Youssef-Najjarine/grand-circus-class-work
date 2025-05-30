@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
+using static Enumerations_57_62.Card;
 
 namespace Enumerations_57_62
 {
@@ -17,8 +18,8 @@ namespace Enumerations_57_62
                 //Console.WriteLine("\nEXERCISE 58!\n");
                 //Exercise58();
 
-                Console.WriteLine("\nEXERCISE 59!\n");
-                Exercise59();
+                Console.WriteLine("\nEXERCISE 60!\n");
+                Exercise60();
             } while (ContinueGame(continueString));
         }
         private static void Exercise57()
@@ -167,9 +168,13 @@ namespace Enumerations_57_62
             Friday,
             Saturday
         }
-        private static void Exercise59()
+        private static void Exercise60()
         {
             Deck deck = new Deck();
+            object firstCard = deck.DeckOfCards[0];
+            object suit = firstCard.GetType().GetProperty("suit").GetValue(firstCard);
+            object rank = firstCard.GetType().GetProperty("rank").GetValue(firstCard);
+            Console.WriteLine($"Shuffling... You drew a {rank} of {suit}.");
         }
         private static bool CheckUserResponse(string userInput, int exerciseNumber)
         {

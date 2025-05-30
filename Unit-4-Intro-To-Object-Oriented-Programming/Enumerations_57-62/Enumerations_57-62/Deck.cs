@@ -8,19 +8,34 @@ namespace Enumerations_57_62
 {
     internal class Deck
     {
-        private List<object> deck = new List<object>();
+        // Constructors
         public Deck()
         {
             foreach (Enum suit in Card.Suits)
             {
                 foreach (Enum rank in Card.Ranks)
                 {
-                    deck.Add(new { suit, rank });
+                    DeckOfCards.Add(new { suit, rank });
                 }
             }
-            foreach ( object card in deck)
+            ShuffleDeck(DeckOfCards);
+        }
+
+        // Properties
+        public List<object> DeckOfCards { get; } = new List<object>();
+
+        // Methods
+        private static void ShuffleDeck(List<object> deck)
+        {
+            int n = deck.Count;
+            Random random = new Random();
+            while (n > 1)
             {
-                Console.WriteLine(card);
+                n--;
+                int randomNum = random.Next(n + 1);
+                object value = deck[randomNum];
+                deck[randomNum] = deck[n];
+                deck[n] = value;
             }
         }
     }
