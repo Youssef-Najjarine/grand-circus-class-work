@@ -1,5 +1,5 @@
-﻿namespace Playing_Card_Poker_Game;
-
+﻿//namespace Playing_Card_Poker_Game;
+package PlayingCard;
 public class PlayingCard
 {
     /***************************************************************************************************
@@ -48,19 +48,19 @@ public class PlayingCard
      * readonly so it can't be changed - const is Ok too 
      ***************************************************************************************************/
 //                            datatype  variable-name    = initial-value  ;
-    protected static readonly CardValue DEFAULTCARDVALUE = CardValue.Joker;   // enum data-type for value
-    protected static readonly CardColor DEFAULTCOLOR     = CardColor.Black;
-    protected static readonly CardSuit  DEFAULTSUIT      = CardSuit.Joker;
+    protected static final CardValue DEFAULTCARDVALUE = CardValue.Joker;   // enum data-type for value
+    protected static final CardColor DEFAULTCOLOR     = CardColor.Black;
+    protected static final CardSuit  DEFAULTSUIT      = CardSuit.Joker;
     /***************************************************************************************************
      * Member data
      *
      * private to protect as prescribed by encapsulation - method must be used to access the data 
      ***************************************************************************************************/
 
-    private CardValue _value;  // use enum for data type- C# will enforce allowable values
-    private CardColor _color;  // use enum for data type- C# will enforce allowable values
-    private CardSuit  _suit;   // use enum for data type- C# will enforce allowable values
-    private bool      _faceUp; // true if card is face up; false if not   
+    private CardValue value;  // use enum for data type- C# will enforce allowable values
+    private CardColor color;  // use enum for data type- C# will enforce allowable values
+    private CardSuit suit;   // use enum for data type- C# will enforce allowable values
+    private boolean faceUp; // true if card is face up; false if not
 
     /***************************************************************************************************
      * Default constructor - in case it is needed
@@ -68,48 +68,68 @@ public class PlayingCard
 
     public PlayingCard()
     {
-        _value = DEFAULTCARDVALUE;
-        _suit  = DEFAULTSUIT;
-        SetColor(_suit);     // Set color in object based on suit - NOTE: suit must have a value before this
-        _faceUp = false;
+        value = DEFAULTCARDVALUE;
+        suit = DEFAULTSUIT;
+        SetColor(suit);     // Set color in object based on suit - NOTE: suit must have a value before this
+        faceUp = false;
     }
     /***************************************************************************************************
      * 2-arg (CardValue and CardSuit) constructor
      ***************************************************************************************************/
     public PlayingCard(CardValue value, CardSuit suit)
     {
-        this._value = value;   // Set value in object to value passed as argument
+        this.value = value;   // Set value in object to value passed as argument
         SetColor(suit);        // Set color in object based on suit passed as argument
-        this._suit = suit;     // Set suit in object to suit passed as argument
-        _faceUp = false;
+        this.suit = suit;     // Set suit in object to suit passed as argument
+        faceUp = false;
     }
     /***************************************************************************************************
      * 2-arg (int and CardSuit) constructor
      ***************************************************************************************************/
     public PlayingCard(int value, CardSuit suit)
     {
-        this._value = SetValue(value); // Set value in object based on int value passed as argument
+        this.value = SetValue(value); // Set value in object based on int value passed as argument
         SetColor(suit);                // Set color in object based on suit passed as argument
-        this._suit = suit;             // Set suit in object to suit passed as argument
-        _faceUp = false;
+        this.suit = suit;             // Set suit in object to suit passed as argument
+        faceUp = false;
     }
     /***************************************************************************************************
      * Properties - Used for others to access private data via getters and setters
      **************************************************************************************************/
-    public CardValue Value
-    {             get { return _value;  }
-        protected set { _value = value; } // protected so only subclasses can change value
+    /***************************************************************************************************
+     * Standard getter and setter methods
+     ***************************************************************************************************/
+    public CardValue getValue() {
+        return value;
     }
 
-    public CardColor Color { get; protected set; }  // set protected so only subclasses can change value
-
-    public CardSuit Suit
-    {
-        get => _suit;
-        protected set => _suit = value;   // protected so only subclasses can change value
+    public void setValue(CardValue value) {
+        this.value = value;
     }
 
-    public bool FaceUp { get; set; }
+    public CardColor getColor() {
+        return color;
+    }
+
+    public void setColor(CardColor color) {
+        this.color = color;
+    }
+
+    public CardSuit getSuit() {
+        return suit;
+    }
+
+    public void setSuit(CardSuit suit) {
+        this.suit = suit;
+    }
+
+    public boolean isFaceUp() {
+        return faceUp;
+    }
+
+    public void setFaceUp(boolean faceUp) {
+        this.faceUp = faceUp;
+    }
 
     /***************************************************************************************************
      * additional getter and setter methods
@@ -118,7 +138,7 @@ public class PlayingCard
     // Return the integer value assigned to the card - value is an enum called CardValue
     public int GetIntValue()
     {   // Return integer value of CardValue enum in a PlayingCard 
-        return (int) _value;  // cast the enum to an int to get its integer value
+        return (int) value;  // cast the enum to an int to get its integer value
     }
 
     public CardValue SetValue(int ivalue)
@@ -184,21 +204,21 @@ public class PlayingCard
         {
             case CardSuit.Spade:       // Stacking cases simulates an equal or condition
             case CardSuit.Club:
-                this._color = CardColor.Black;
+                this.color = CardColor.Black;
                 break;      // break is required so we don't fall through to the next case - we exit the switch
             case CardSuit.Diamond:
             case CardSuit.Heart:
-                this._color = CardColor.Red;
+                this.color = CardColor.Red;
                 break;      // break is required so we don't fall through to the next case - we exit the switch
             default:
-                this._color = DEFAULTCOLOR;  // break is needed here even through its last case
+                this.color = DEFAULTCOLOR;  // break is needed here even through its last case
                 break;
         }
     }
 
     public void Flip()  // reverse if card is face up or down
     {
-        _faceUp = !_faceUp;
+        faceUp = !faceUp;
     }
 
     /***************************************************************************************************
@@ -229,7 +249,7 @@ public class PlayingCard
             if ((otherObject is PlayingCard))
             {   // If the object being compared to is the same class as object 
                 PlayingCard otherCard = (PlayingCard)otherObject; // Define a PlayingCard object from object being compared to
-                return (this._value == otherCard._value && this._color == otherCard._color && this._suit == otherCard._suit);
+                return (this.value == otherCard.value && this.color == otherCard.color && this.suit == otherCard.suit);
             }
             return false;    // Required so IDE realizes all logic paths are closed
         }
@@ -245,7 +265,7 @@ public class PlayingCard
         //
         // The same variables used to determine object equality should be used
         //     when generating a hash code
-        return HashCode.Combine(_value, _suit, _color);
+        return HashCode.Combine(value, suit, color);
     }
 
     /***************************************************************************************************
