@@ -18,8 +18,12 @@ namespace Enumerations_57_62
                 //Console.WriteLine("\nEXERCISE 58!\n");
                 //Exercise58();
 
-                Console.WriteLine("\nEXERCISE 60!\n");
-                Exercise60();
+                //Console.WriteLine("\nEXERCISE 60!\n");
+                //Exercise60();
+
+                //Console.WriteLine("\nEXERCISE 61!\n");
+                //Exercise61();
+
             } while (ContinueGame(continueString));
         }
         private static void Exercise57()
@@ -175,6 +179,15 @@ namespace Enumerations_57_62
             object suit = firstCard.GetType().GetProperty("suit").GetValue(firstCard);
             object rank = firstCard.GetType().GetProperty("rank").GetValue(firstCard);
             Console.WriteLine($"Shuffling... You drew a {rank} of {suit}.");
+        }
+        private static void Exercise61()
+        {
+            Circle circle = new Circle(5, "Circle", 0);
+            Console.WriteLine($"Shape: {circle.ShapeName}, Sides: {circle.SidesCount}, Area: {circle.Area}, Perimeter: {circle.Perimeter}");
+            Square square = new Square(7, "Square", 4);
+            Console.WriteLine($"Shape: {square.ShapeName}, Sides: {square.SidesCount}, Area: {square.Area}, Perimeter: {square.Perimeter}");
+            Triangle triangle = new Triangle(3, 4, 5, "Triangle", 3);
+            Console.WriteLine($"Shape: {triangle.ShapeName}, Sides: {triangle.SidesCount}, Area: {triangle.Area}, Perimeter: {triangle.Perimeter}");
         }
         private static bool CheckUserResponse(string userInput, int exerciseNumber)
         {

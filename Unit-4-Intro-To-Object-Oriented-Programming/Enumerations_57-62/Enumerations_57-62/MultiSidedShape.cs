@@ -9,15 +9,28 @@ namespace Enumerations_57_62
     internal abstract class MultiSidedShape : Shape
     {
         // Constructors
-        protected MultiSidedShape(string shapeName, int sides) : base(shapeName, sides)
+        protected MultiSidedShape(string shapeName, int sides)
         {
             this.ShapeName = shapeName;
             this.SidesCount = sides;
         }
         // Properties
+        public string ShapeName { get; set; }
+        public int SidesCount { get; set; }
+        protected double Radius { get; }
+        public double Area { get; set; }
+        public double Perimeter { get; set; }
         protected abstract List<double> SideLengths { get; }
 
         // Methods
+        public double CalculateArea()
+        {
+            return Math.Round(Math.PI * (this.Radius * this.Radius), 2);
+        }
+        public double CalculatePerimeter()
+        {
+            return Math.Round(Math.PI * (2 * this.Radius), 2);
+        }
         public override string ToString()
         {
             string displayString = $"The {this.ShapeName} has side lengths ";

@@ -17,7 +17,7 @@ namespace Enumerations_57_62
         // Properties
         public string ShapeName { get; set; }
         public int SidesCount { get; set; }
-        double Radius { get; }
+        protected double Radius { get; }
         public double Area { get; set; }
         public double Perimeter { get; set; }
 
