@@ -186,13 +186,13 @@ public class PlayingCard
      * Miscellaneous class methods
      ***************************************************************************************************/
     public void showCard() {   // Display an instance of a PlayingCard
-        // C#: Console.WriteLine()
+        // C#: System.out.println()
         // Java: System.out.println()
         System.out.println(this.toString());
     }
 
     public void showCardWithHash() {   // Display an instance of a PlayingCard with HashCode
-        // C#: Console.WriteLine()
+        // C#: System.out.println()
         // Java: System.out.println()
         System.out.println(this.toString() + "\thashCode: " + hashCode());
     }

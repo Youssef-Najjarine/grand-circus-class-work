@@ -1,4 +1,9 @@
-﻿namespace Playing_Card_Poker_Game;
+package CardDeck;
+import PlayingCard.PlayingCard;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CardDeck
 {
@@ -6,12 +11,12 @@ public class CardDeck
 	 * CardDeck has a set of PLayingCards - "has-a" relationship - define the object in the class
 	 ***************************************************************************************************/
 
-	List<PlayingCard> deckOfCards = new List<PlayingCard>();  // Define a List to hold PlayingCards
+	List<PlayingCard> deckOfCards = new ArrayList<PlayingCard>();  // Define a List to hold PlayingCards
 
 	/***************************************************************************************************
 	 * Number of non-Joker cards per suit
 	 ***************************************************************************************************/
-	private const int numberCardsForSuit = 13;
+	private final int numberCardsForSuit = 13;
 
 	/***************************************************************************************************
 	 * Default Constructor
@@ -28,19 +33,22 @@ public class CardDeck
 
 	public void ShowDeck()
 	{
-		Console.WriteLine("Number of Cards in Deck: " + deckOfCards.Count);
-		foreach (PlayingCard aCard in deckOfCards)
-		{
-			aCard.ShowCardWithHash();
+		System.out.println("Number of Cards in Deck: " + deckOfCards.size());
+//		foreach (PlayingCard aCard in deckOfCards)
+//		{
+//			aCard.ShowCardWithHash();
+//		}
+		for(PlayingCard aCard : deckOfCards) {
+			aCard.showCardWithHash();
 		}
 	}
 	/***************************************************************************************************
 	 * Answer question are they any cards in the deck
 	 ***************************************************************************************************/
 
-	public bool AnyCardsInDeck()
+	public boolean AnyCardsInDeck()
 	{
-		if (deckOfCards.Count > 0)
+		if (deckOfCards.size() > 0)
 		{
 			return true;
 		}
@@ -53,13 +61,13 @@ public class CardDeck
 	/***************************************************************************************************
 	 * Deal a card from the top of the deck
 	 ***************************************************************************************************/
-	public PlayingCard DealCard()
+	public PlayingCard dealCard()
 	{
-		if (deckOfCards.Count > 0)
+		if (deckOfCards.size() > 0)
 		{
 			// Simulate queue behavior (remove from head)
-			PlayingCard cardToDeal = deckOfCards[0];
-			deckOfCards.RemoveAt(0);
+			PlayingCard cardToDeal = deckOfCards.get(0);
+			deckOfCards.remove(0);
 			return cardToDeal;
 		}
 		else
@@ -70,31 +78,31 @@ public class CardDeck
 	/***************************************************************************************************
 	 * Create a deck with or without Jokers
 	 ***************************************************************************************************/
-	public void ResetDeck(bool withJoker)
+	public void ResetDeck(boolean withJoker)
 	{
-		deckOfCards.Clear();              // Remove any existing cards from the deck
+		deckOfCards.clear();              // Remove any existing cards from the deck
 
 		for (int i = 1; i <= numberCardsForSuit; i++)
 		{    // Generate a set of clubs
-			deckOfCards.Add(new PlayingCard(i, PlayingCard.CardSuit.Club));
+			deckOfCards.add(new PlayingCard(i, PlayingCard.CardSuit.Club));
 		}
 		for (int i = 1; i <= numberCardsForSuit; i++)
 		{    // Generate a set of hearts
-			deckOfCards.Add(new PlayingCard(i, PlayingCard.CardSuit.Heart));
+			deckOfCards.add(new PlayingCard(i, PlayingCard.CardSuit.Heart));
 		}
 		for (int i = 1; i <= numberCardsForSuit; i++)
 		{    // Generate a set of spades
-			deckOfCards.Add(new PlayingCard(i, PlayingCard.CardSuit.Spade));
+			deckOfCards.add(new PlayingCard(i, PlayingCard.CardSuit.Spade));
 		}
 		for (int i = 1; i <= numberCardsForSuit; i++)
 		{     // Generate a set of diamonds
-			deckOfCards.Add(new PlayingCard(i, PlayingCard.CardSuit.Diamond));
+			deckOfCards.add(new PlayingCard(i, PlayingCard.CardSuit.Diamond));
 		}
 
 		if (withJoker)
 		{  // If Jokers requested, add them
-			deckOfCards.Add(new PlayingCard(PlayingCard.CardValue.Joker, PlayingCard.CardSuit.Joker));
-			deckOfCards.Add(new PlayingCard(PlayingCard.CardValue.Joker, PlayingCard.CardSuit.Joker));
+			deckOfCards.add(new PlayingCard(PlayingCard.CardValue.Joker, PlayingCard.CardSuit.Joker));
+			deckOfCards.add(new PlayingCard(PlayingCard.CardValue.Joker, PlayingCard.CardSuit.Joker));
 		}
 	}
 	/***************************************************************************************************
@@ -118,30 +126,29 @@ public class CardDeck
 		// To generate a Random value: .Next(largest-value-desired + 1)
 		Random randomNumberGenerator = new Random();
 		
-		int currentCardPosition = deckOfCards.Count;
+		int currentCardPosition = deckOfCards.size();
 		while (currentCardPosition > 1)
 		{
 			currentCardPosition--;
-			int randomCardPosition = randomNumberGenerator.Next(currentCardPosition + 1);
-			PlayingCard holdCard = deckOfCards[randomCardPosition];
-			deckOfCards[randomCardPosition] = deckOfCards[currentCardPosition];
-			deckOfCards[currentCardPosition] = holdCard;
+			int randomCardPosition = randomNumberGenerator.nextInt(currentCardPosition + 1);
+			PlayingCard holdCard = deckOfCards.get(randomCardPosition);
+			deckOfCards.set(randomCardPosition, deckOfCards.get(currentCardPosition));
+			deckOfCards.set(currentCardPosition, holdCard);
 		}
 	}
 
 	/***************************************************************************************************
 	 * Remove any Jokers from a Deck
 	 ***************************************************************************************************/
-	public int RemoveJokers()
+	public int removeJokers()
 	{
-		int numCardsBefore = deckOfCards.Count;                       // Remember # cards before removal
+		int numCardsBefore = deckOfCards.size();                       // Remember # cards before removal
 		// Use RemoveAll with a predicate to remove cards matching the Joker criteria
 		// This is the C# equivalent of C#'s removeAll(Collection) when the collection
 		// contains the items to be removed.
-		int numRemoved = deckOfCards.RemoveAll(card => card.Value == PlayingCard.CardValue.Joker && card.Suit == PlayingCard.CardSuit.Joker);
-		// The C# code calculates removed count differently, but the result is the same
-		// if RemoveAll returns the count, or by comparing sizes before and after.
-		// Let's return the difference in size to match the C# logic exactly.
-		return numCardsBefore - deckOfCards.Count;                    // Return # of Jokers removed
+		List<PlayingCard> jokerCards = new ArrayList<PlayingCard>();
+		jokerCards.add(new PlayingCard());
+		deckOfCards.removeAll(jokerCards);
+		return numCardsBefore - deckOfCards.size();                    // Return # of Jokers removed
 	}
 }

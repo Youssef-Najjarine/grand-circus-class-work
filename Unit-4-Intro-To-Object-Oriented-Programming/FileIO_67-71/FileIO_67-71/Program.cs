@@ -9,6 +9,9 @@
 
             Console.WriteLine("\nExercise 68!!\n");
             Exercise68();
+
+            Console.WriteLine("\nExercise 68!!\n");
+            Exercise68();
         }
         private static void Exercise67()
         {
@@ -73,6 +76,10 @@
                 continueGame = userInput == "y" || userInput == "yes";
             } while (continueGame);
             Console.WriteLine("GoodBye!");
+        }
+        private static void Exercise69()
+        {
+            // Not implemented in this example
         }
     }
 }
