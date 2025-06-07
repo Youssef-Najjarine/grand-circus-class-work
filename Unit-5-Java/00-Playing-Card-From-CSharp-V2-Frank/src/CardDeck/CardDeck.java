@@ -6,10 +6,7 @@ package CardDeck; // PackageName name must match teh folder name containing pack
 //     PackageName.Classname;
 import PlayingCard.PlayingCard;  // Give me access to the PlayingCard class stuff
 
-import java.util.ArrayList;      // Give me access to the ArrayList class stuff
-import java.util.Collections;
-import java.util.List;           // Give me access to the List class stuff
-import java.util.Random;         // Give me access to the Random clas stuff
+import java.util.*;
 
 public class CardDeck
 {
@@ -105,7 +102,6 @@ public class CardDeck
 		int cardPosition = randomNumberGenerator.nextInt(deckOfCards.size());
 
 		deckOfCards.add(cardPosition, aCard);
-
 		return cardPosition;
 	}
 
