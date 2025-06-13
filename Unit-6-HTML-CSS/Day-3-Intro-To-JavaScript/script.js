@@ -9,9 +9,19 @@
  * They don't have a return type and the naming convention is camel-case.
  */
 function variables() {
+  const aVariable = 774;
+  console.log(`I chose ${aVariable}`);
   // Declares a variable where the value cannot be changed
   // Declares a variable those value can be changed
   // Declares a variable that will always be an array
+  let itBe = 87.4;
+  console.log(`The value in itBe is: ${itBe}`);
+  itBe = 1776;
+  console.log(`The value in itBe is: ${itBe}`);
+  let stuff = [1,2,3,4, "hello"];
+
+  console.table(stuff);
+  console.info(stuff);
 }
 
 /**

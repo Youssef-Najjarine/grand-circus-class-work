@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Info</title>
+    <link rel="stylesheet" href="contactInfo.css"/>
 </head>
 <body>
     <header>
@@ -36,11 +37,31 @@
 
 
             <!-- the <label> tag provides information/prompt to the user on what to enter-->
-            <!-- <label> has one attribute:  for="id-of-the-associated-input-control"    -->   
-            <div> <!-- Ask for for the person's name -->     
-                <label for="nameField">Enter your full name: </label>
-                <input type="text" id="nameField" name="personsName"/>
-            </div>    
+            <!-- <label> has one attribute:  for="id-of-the-associated-input-control"    --> 
+                <nav>
+                    <a href="index.html">Back to home page</a>
+                </nav>  
+                <div> <!-- Ask for for the person's name -->     
+                    <label for="nameField">Enter your full name: </label>
+                    <input type="text" id="nameField" name="personsName"/>
+                </div> 
+                <div>  
+                    <label for="nameField">Enter the city where you reside: </label>
+                    <input type="text" id="cityField" name="cityName"/>
+                </div> 
+                <div>  
+                    <label for="favNumField">Please choose your favorite number: </label>
+                    <input type="number" id="favNumField" name="favoriteNumber"/>
+                </div> 
+                <div>  
+                    <label for="favColorField">Please choose your favorite colo: </label>
+                    <input type="color" id="colorField" name="favoriteColor"/>
+                </div> 
+                <div>  
+                    <label for="nextBdayField">Please choose your next birthday: </label>
+                    <input type="date" id="BdayField" name="nextBirthday"/>
+                </div>    
+                <input type="submit"/>
            </form>
 
     </main>
