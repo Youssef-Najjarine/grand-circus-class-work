@@ -1,0 +1,53 @@
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+@media screen and (min-width: 1440px) {
+
+    .home-navbar-desktop {
+        display: flex;
+        padding: 28.8px 60px;
+        background-color: #FFF;
+        width: 100%;
+        height: 90px;
+        max-height: 90px;
+    }
+    
+    .home-navbar-container-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+    
+    .home-logo-text-desktop {
+        color: #141522;
+        font-size: 26.52px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: -0.53px;
+    }
+    
+    .home-navbar-options {
+        display: flex;
+        align-items: center;
+    }
+    .home-navbar-links-desktop {
+        display: flex;
+        gap: 38.4px;
+    }
+    
+    .home-navbar-link-desktop {
+        color: #111827;
+        font-size: 16.8px;
+        font-weight: 500;
+        line-height: 150%; 
+    }
+    
+    .home-navbar-link-desktop:hover {
+        color: #6366F1;
+    }
+}
