@@ -163,3 +163,17 @@ function stringFunctions(value) {
         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
     */
 }
+  var toaster = "toaster";
+   function arrayFunctions() {
+    stooges = [
+      "Moe",
+      "Larry",
+      "Curly"
+    ]
+    console.log(this);
+
+    this.stooges.forEach(el => {
+      console.log("el: ", el);
+    });
+    return "hello";
+   }
