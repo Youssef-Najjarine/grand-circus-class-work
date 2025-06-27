@@ -78,30 +78,20 @@
         <!-- the values are stored as a group under the name="" variable            -->
         <!--    (next week will know this as an array)                              -->
         <p>Do you like any sports?</p>
-        <input type="checkbox" id="football" name="preferredSports" value="Football" [(ngModel)]="sports">
-        <label for="football">American Football</label>
-        <br>
-        <input type="checkbox" id="soccer"   name="preferredSports" value="soccer" [(ngModel)]="sports">
-        <label for="soccer">European Football</label>
-        <br>
-        <input type="checkbox" id="baseball" name="preferredSports" value="baseball" [(ngModel)]="sports">
-        <label for="baseball">Baseball</label>
-        <br>
-        <input type="checkbox"  id="basketball" name="preferredSports" value="basketball" [(ngModel)]="sports">
-        <label for="basketball">Basketball</label>
-        <br>
-        <input type="checkbox" id="cricket" name="preferredSports" value="cricket" [(ngModel)]="sports">
-        <label for="cricket">Cricket</label>
-        <br>
-        <input type="checkbox" id="hockey" name="preferredSports" value="hockey" [(ngModel)]="sports">
-        <label for="hockey">Hockey</label>
-        <br>
-        <input type="checkbox" id="other" name="preferredSports" value="some-other-sport" [(ngModel)]="sports">
-        <label for="other">Other Sport</label>
+        <div *ngFor="let aCheckbox of sports">
+            <input 
+                type="checkbox"
+                [(ngModel)] = "aCheckbox.checked"
+                [value] = "aCheckbox.value"
+                [ngModelOptions]="{standalone: true}"
+            />
+            <label>{{aCheckbox.name}}</label>
+        </div>
     </div>
     <div>
         <br>  
         <!-- type="submit" generates a submit button                            -->  
+
         <!-- a submit button send the data from the form to the URL specified   -->
         <!--          in the action="" attribute on the form tag                -->
         <!--          using the request type specified in method="" on the form -->
