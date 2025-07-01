@@ -1,0 +1,8 @@
+<div>
+    <h3>Student List</h3>
+    <ol>
+        <li *ngFor="let student of roster">
+            {{ student.name }} ({{ student.age }}) - {{ student.city }}
+        </li>
+    </ol>
+</div>
