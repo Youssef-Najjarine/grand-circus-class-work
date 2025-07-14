@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nav-bar',   // Use this in the HTML as the tab for the component
+  selector: 'nav-bar',   // Use this in the HTML as the tab for the component
   imports: [],
   templateUrl: './nav-bar.html',
   styleUrl: './nav-bar.css'
