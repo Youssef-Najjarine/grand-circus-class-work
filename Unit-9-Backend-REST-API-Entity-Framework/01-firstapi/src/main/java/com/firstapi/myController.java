@@ -8,6 +8,12 @@ public class myController {
 
     @GetMapping
     public String anyName() {
+
         return "Hi There";
+    }
+
+    @GetMapping("/welcome")
+    public String someController() {
+        return "Welcome to my first API.";
     }
 }
