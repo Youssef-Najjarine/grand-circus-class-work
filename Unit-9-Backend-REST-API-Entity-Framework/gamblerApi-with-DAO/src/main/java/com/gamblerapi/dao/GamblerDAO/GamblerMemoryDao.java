@@ -35,5 +35,20 @@ public class GamblerMemoryDao {
         return gamblers;
     }
 
-
+    public Gambler getGambler(int id) {
+        for (Gambler gambler: gamblers) {
+            if (gambler.getId() == id) {
+                return gambler;
+            }
+        }
+        return null;
+    }
+    public Gambler getGamblerByName(String name) {
+        for (Gambler gambler: gamblers) {
+            if (gambler.getName().equalsIgnoreCase(name)) {
+                return gambler;
+            }
+        }
+        return null;
+    }
 }
