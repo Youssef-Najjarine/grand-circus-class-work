@@ -15,7 +15,7 @@ public class GamblerApiClientApp {
 
         System.out.println("-".repeat(70) + "\nCall API to retrieve all the gamblers and display them\n"+"-".repeat(70));
 
-        for(Gambler aGambler : gamblerService.getAllGamblers() ) {
+-        for(Gambler aGambler : gamblerService.getAllGamblers() ) {
             aGambler.displayGambler();
         }
 
