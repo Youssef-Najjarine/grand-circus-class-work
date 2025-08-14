@@ -17,5 +17,5 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 export const appConfig: ApplicationConfig = {
   // the providers attribute is an array of constructors major features you are using
   // include the provideHttpClient() as a provider if using HTTP to interact with servers
-  providers: [provideRouter(routes), provideHttpClient(), provideAnimationsAsync()]
+  providers: [provideRouter(routes), provideHttpClient(), provideAnimationsAsync(), provideAnimationsAsync()]
 };
