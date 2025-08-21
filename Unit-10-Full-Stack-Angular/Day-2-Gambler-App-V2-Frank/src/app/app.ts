@@ -48,7 +48,5 @@ export class App implements OnInit {
     //  theGamblers.add(newGambler)
     this.theGamblers = await this.gamblerApiService.getAllGamblers()
   }
-  
- 
 
 }

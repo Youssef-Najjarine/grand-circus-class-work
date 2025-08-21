@@ -7,17 +7,17 @@
 <!-- @empty specifies what to disply if the array is empty (no tags generated) --> 
 <table id="GamblerInfoTable">
   @for(aGambler of theGamblers; track aGambler.id;) {
-  <tr> 
-    <td> {{aGambler.id}}</td>
-    <td> {{aGambler.name}}</td>
-    <td> {{aGambler.address}}</td>
-    <td> {{aGambler.salary}}</td>
-    <td> {{aGambler.birthDate}}</td>
-  </tr>
-}
-@empty {
-  <p>No gamblers items found.</p>
-}
+    <tr> 
+      <td> {{aGambler.id}}</td>
+      <td> {{aGambler.name}}</td>
+      <td> {{aGambler.address}}</td>
+      <td> {{aGambler.salary}}</td>
+      <td> {{aGambler.birthDate}}</td>
+    </tr>
+  }
+  @empty {
+    <p>No gamblers items found.</p>
+  }
 </table>
 &nbsp;&nbsp;
 <section>
